@@ -1,0 +1,94 @@
+//- Template
+    This task is used to demonstrate how you like to work, therefor the guidelines are quite loose.
+    Use pug and SCSS, beside that feel free to include whatever is needed.
+
+    The following site should be created:
+
+        We do need a responsive website layout that includes the following elements on the given positions:
+            * A navigation with 3 items and their sub-items on top left
+                * Cars(BMW, Mercedes)
+                * Food(Vegetables, Meat)
+                * Animals(Dogs, Cats)
+            * A language selector that highlights the current language with at least 2 options to choose from on top right
+            * A footer at the bottom of the page
+            * A chat icon that floats on bottom left
+                * onClick a modal window opens that shows a form asking for:
+                    * Name
+                    * Email
+                    * Message
+                * All fields are required
+
+doctype html
+html
+    head
+        title Task 4
+        link(rel="stylesheet" href="./task4.css")
+        link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous")
+        script(src="./assets/script.js")
+        script(src="https://kit.fontawesome.com/b05f964f5b.js")
+        script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js")
+        script(src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous")
+        script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous")
+    body
+        nav(class="navbar navbar-expand-lg navbar-light bg-light")
+            button(class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation")
+                span(class="navbar-toggler-icon")
+            div(class="collapse navbar-collapse" id="navbarSupportedContent")
+                ul(class="navbar-nav mr-auto")
+                    li(class="nav-item dropdown")
+                        a(class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") Cars
+                        div(class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink")
+                            a(class="dropdown-item" href="#") BMW
+                            a(class="dropdown-item" href="#") Mercedes
+                    li(class="nav-item dropdown")
+                        a(class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") Food
+                        div(class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink")
+                            a(class="dropdown-item" href="#") Vegetables
+                            a(class="dropdown-item" href="#") Meat
+                    li(class="nav-item dropdown")
+                        a(class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") Animals
+                        div(class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink")
+                            a(class="dropdown-item" href="#") Dogs
+                            a(class="dropdown-item" href="#") Cats
+                //- Lenguage options
+                label(class="mdb-main-label" id="language") Lenguage
+                select(class="mdb-select md-form")
+                    option(value="" disabled selected)
+                    option(value="" data-icon="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.3.0/flags/1x1/us.svg" class="rounded-circle")
+                        | English
+                    option(value="" data-icon="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.3.0/flags/4x3/it.svg" class="rounded-circle")
+                        | Italic
+                    option(value="" data-icon="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.3.0/flags/4x3/fr.svg" class="rounded-circle")
+                        | French
+        //- chat 
+        button(type="button" class="chat" data-toggle="modal" data-target="#messageModal")
+            i(class="fas fa-comments")
+        div(class="modal fade" id="messageModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true")
+            div(class="modal-dialog" role="document")
+                div(class="modal-content")
+                    div(class="modal-header")
+                        h5(class="modal-title" id="exampleModalLabel") New message
+                        button(type="button" class="close" data-dismiss="modal" aria-label="Close")
+                        span(aria-hidden="true")
+                    div(class="modal-body")
+                        form(class="message-form")
+                            div(class="form-group")
+                                label(for="recipient-name" class="col-form-label") Name:
+                                input(type="text" class="form-control" id="recipient-name")
+                                div(class="errorMessage hidden" id="name-error-msg") Please, enter a name
+                            div(class="form-group")
+                                label(for="recipient-email" class="col-form-label") Email:
+                                input(type="text" class="form-control" id="recipient-email" required)
+                                div(class="errorMessage hidden" id="email-error-msg") Incorect email
+                            div(class="form-group")
+                                label(for="message-text" class="col-form-label") Message:
+                                textarea(class="form-control" id="message-text" required)
+                                div(class="errorMessage hidden" id="message-error-msg") Please enter a message more than 10 symbols
+                            div(class="modal-footer")
+                                button(type="button" class="btn btn-secondary" data-dismiss="modal") Close
+                                button(type="submit" id="submitButton" class="btn btn-primary" onClick="validation.validate()") Submit message
+        //- footer
+        div(class="footer")
+            p All right Reserved
+                    
+

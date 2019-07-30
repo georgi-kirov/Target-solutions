@@ -1,0 +1,16 @@
+<!DOCTYPE html><html><head><title>Task 1</title></head><body><p id="firstP">Lorem ipsum dolor sit amet, consectetur adipiscing elit, <a href="#">sed</a> do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pulvinar elementum integer enim neque volutpat ac. Facilisis sed odio morbi quis commodo odio aenean sed. Vel facilisis volutpat est velit. Viverra aliquet eget sit amet tellus cras adipiscing enim. Ultricies mi quis hendrerit dolor magna eget est lorem. Fames ac turpis egestas maecenas pharetra convallis. Laoreet non curabitur gravida arcu ac tortor dignissim convallis. Sapien et ligula ullamcorper malesuada proin libero nunc. Mattis nunc sed blandit libero volutpat sed cras ornare. Faucibus et molestie ac feugiat sed. Libero volutpat sed cras ornare. Vitae proin sagittis nisl rhoncus mattis rhoncus urna neque. Placerat vestibulum lectus mauris ultrices. Tortor dignissim convallis aenean et tortor at risus viverra. Ut aliquam purus sit amet luctus venenatis lectus. Tortor dignissim convallis aenean et tortor at. Cursus eget nunc scelerisque viverra mauris in.</p><p id="secondP">Viverra mauris in aliquam sem fringilla ut morbi tincidunt. Condimentum mattis pellentesque id nibh. Elementum tempus egestas sed sed risus pretium. Pellentesque habitant morbi tristique senectus et netus et malesuada fames. Mauris vitae ultricies leo integer. Laoreet sit amet cursus sit amet dictum sit. Quis blandit turpis cursus in hac habitasse. Accumsan tortor posuere ac ut. Eget magna fermentum iaculis eu non diam phasellus vestibulum. Semper eget duis at tellus at. Tristique sollicitudin nibh sit amet commodo nulla. Neque gravida in fermentum et. Pretium viverra suspendisse potenti nullam ac tortor. In mollis nunc sed id semper risus.</p><script>(function() {
+    let firstP = document.getElementById('firstP').innerHTML;
+    let secondP = document.getElementById('secondP').innerHTML;
+   
+    function test(text) {
+        let sedChange = '';
+        // make SED a link
+        sedChange = text.replace(/sed/g,'<a href="https://google.com">sed</a>');
+        // make SED a link
+        sedChange = sedChange.replace(/liq/g,'<a href="https://facebook.com">liq</a>');
+        return sedChange;
+    }
+
+    document.getElementById('firstP').innerHTML = test(firstP);
+    document.getElementById('secondP').innerHTML = test(secondP);
+})();</script></body></html>

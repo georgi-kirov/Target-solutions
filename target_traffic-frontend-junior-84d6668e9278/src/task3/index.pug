@@ -1,0 +1,41 @@
+//- Templates
+
+    Please create 2 paragraphs from the texts at the bottom. Every occurance in this text of the following words/letters shall become a link to the destination defined below:
+
+        sed -> https://google.com
+        liq -> https://facebook.com
+
+    There are 2 ways to add links inside a text node, please use both at least once and explain why one is better than the other in this case.
+
+
+    Paragraph1:
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pulvinar elementum integer enim neque volutpat ac. Facilisis sed odio morbi quis commodo odio aenean sed. Vel facilisis volutpat est velit. Viverra aliquet eget sit amet tellus cras adipiscing enim. Ultricies mi quis hendrerit dolor magna eget est lorem. Fames ac turpis egestas maecenas pharetra convallis. Laoreet non curabitur gravida arcu ac tortor dignissim convallis. Sapien et ligula ullamcorper malesuada proin libero nunc. Mattis nunc sed blandit libero volutpat sed cras ornare. Faucibus et molestie ac feugiat sed. Libero volutpat sed cras ornare. Vitae proin sagittis nisl rhoncus mattis rhoncus urna neque. Placerat vestibulum lectus mauris ultrices. Tortor dignissim convallis aenean et tortor at risus viverra. Ut aliquam purus sit amet luctus venenatis lectus. Tortor dignissim convallis aenean et tortor at. Cursus eget nunc scelerisque viverra mauris in.
+    
+    Paragraph2:
+    Viverra mauris in aliquam sem fringilla ut morbi tincidunt. Condimentum mattis pellentesque id nibh. Elementum tempus egestas sed sed risus pretium. Pellentesque habitant morbi tristique senectus et netus et malesuada fames. Mauris vitae ultricies leo integer. Laoreet sit amet cursus sit amet dictum sit. Quis blandit turpis cursus in hac habitasse. Accumsan tortor posuere ac ut. Eget magna fermentum iaculis eu non diam phasellus vestibulum. Semper eget duis at tellus at. Tristique sollicitudin nibh sit amet commodo nulla. Neque gravida in fermentum et. Pretium viverra suspendisse potenti nullam ac tortor. In mollis nunc sed id semper risus.
+
+doctype html
+html
+    head
+        title Task 1
+    body
+        p#firstP Lorem ipsum dolor sit amet, consectetur adipiscing elit, #[a(href="#") sed] do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pulvinar elementum integer enim neque volutpat ac. Facilisis sed odio morbi quis commodo odio aenean sed. Vel facilisis volutpat est velit. Viverra aliquet eget sit amet tellus cras adipiscing enim. Ultricies mi quis hendrerit dolor magna eget est lorem. Fames ac turpis egestas maecenas pharetra convallis. Laoreet non curabitur gravida arcu ac tortor dignissim convallis. Sapien et ligula ullamcorper malesuada proin libero nunc. Mattis nunc sed blandit libero volutpat sed cras ornare. Faucibus et molestie ac feugiat sed. Libero volutpat sed cras ornare. Vitae proin sagittis nisl rhoncus mattis rhoncus urna neque. Placerat vestibulum lectus mauris ultrices. Tortor dignissim convallis aenean et tortor at risus viverra. Ut aliquam purus sit amet luctus venenatis lectus. Tortor dignissim convallis aenean et tortor at. Cursus eget nunc scelerisque viverra mauris in.
+        p#secondP Viverra mauris in aliquam sem fringilla ut morbi tincidunt. Condimentum mattis pellentesque id nibh. Elementum tempus egestas sed sed risus pretium. Pellentesque habitant morbi tristique senectus et netus et malesuada fames. Mauris vitae ultricies leo integer. Laoreet sit amet cursus sit amet dictum sit. Quis blandit turpis cursus in hac habitasse. Accumsan tortor posuere ac ut. Eget magna fermentum iaculis eu non diam phasellus vestibulum. Semper eget duis at tellus at. Tristique sollicitudin nibh sit amet commodo nulla. Neque gravida in fermentum et. Pretium viverra suspendisse potenti nullam ac tortor. In mollis nunc sed id semper risus.
+
+        script.
+            (function() {
+                let firstP = document.getElementById('firstP').innerHTML;
+                let secondP = document.getElementById('secondP').innerHTML;
+               
+                function test(text) {
+                    let sedChange = '';
+                    // make SED a link
+                    sedChange = text.replace(/sed/g,'<a href="https://google.com">sed</a>');
+                    // make SED a link
+                    sedChange = sedChange.replace(/liq/g,'<a href="https://facebook.com">liq</a>');
+                    return sedChange;
+                }
+
+                document.getElementById('firstP').innerHTML = test(firstP);
+                document.getElementById('secondP').innerHTML = test(secondP);
+            })();

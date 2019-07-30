@@ -1,0 +1,54 @@
+body {
+    height: 100vh;
+    position: relative;
+
+    nav {
+        ul{
+            &.language {
+                span {
+                    margin-right: 5px;
+                }
+            }
+        }
+
+        #language {
+            margin-right: 5px;
+        }
+    }
+
+    .chat {
+        display: inline-block;
+        position: absolute;
+        left: 2%;
+        bottom: 10%;
+        color: blue;
+        .fas {
+            font-size: 50px;
+        }
+    }
+
+    #messageModal {
+        .hidden {
+            display: none;
+        }
+        .errorMessage {
+            color: red
+        }
+    }
+
+    div {
+        &.footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: #bfbfbf;
+            color: black;
+            text-align: center;
+
+            p {
+                margin: 10px 0 10px 0;
+            }
+          }
+    }
+}

@@ -1,0 +1,31 @@
+body {
+  height: 100vh;
+  position: relative; }
+  body nav ul.language span {
+    margin-right: 5px; }
+  body nav #language {
+    margin-right: 5px; }
+  body .chat {
+    display: inline-block;
+    position: absolute;
+    left: 2%;
+    bottom: 10%;
+    color: blue; }
+    body .chat .fas {
+      font-size: 50px; }
+  body #messageModal .hidden {
+    display: none; }
+  body #messageModal .errorMessage {
+    color: red; }
+  body div.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #bfbfbf;
+    color: black;
+    text-align: center; }
+    body div.footer p {
+      margin: 10px 0 10px 0; }
+
+/*# sourceMappingURL=task4.css.map */
